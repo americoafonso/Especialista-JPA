@@ -14,7 +14,6 @@ public class IniciarUnidadeDePersistencia {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         Produto produto = entityManager.find(Produto.class, 1);
-        System.out.println(produto.getNome());
 
         entityManager.close();
         entityManagerFactory.close();
