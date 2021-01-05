@@ -15,6 +15,7 @@ public class ConsultandoRegistrosTest extends EntityManagerTest {
         Assert.assertEquals("Kindle", produto.getNome());
     }
 
+    @Test
     public void atualizarReferencia() {
         Produto produto = entityManager.find(Produto.class, 1);
         produto.setNome("Microfone Samson");
