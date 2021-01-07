@@ -18,9 +18,9 @@ public class OperacoesComTransacaoTest extends EntityManagerTest {
         Produto produto = new Produto();
 
         //produto.setId(2); comentado porque estamos usando a IDENTITY
-        produto.setNome("Camera Canon");
-        produto.setDescricao("A melhor definicao para suas fotos");
-        produto.setPreco(new BigDecimal(5000));
+        produto.setNome("Tv Samsung");
+        produto.setDescricao("Imagem 4k");
+        produto.setPreco(new BigDecimal(95000));
 
         entityManager.getTransaction().begin();
         entityManager.persist(produto);
