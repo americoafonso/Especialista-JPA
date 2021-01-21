@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -21,6 +22,9 @@ public class Pedido {
     @ManyToOne // Muitos Pedidos para um Cliente
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+
+    @OneToMany(mappedBy = "pedido") // Um Pedido para muitos ItemPedido
+    private List<ItemPedido> itens;
 
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
@@ -38,4 +42,5 @@ public class Pedido {
 
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
+
 }
